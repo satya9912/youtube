@@ -1,17 +1,26 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { toggleMenu } from '../utils/appSlice';
 
 const Header = () => {
+
+     const dispatch = useDispatch();
+
   return (
     <div className='flex items-center justify-between'>
         <div className='flex items-center mr-8'>
             <img alt='menu-icon' 
                  src='https://cdn-icons-png.flaticon.com/128/2516/2516745.png'
-                 className='w-8 h-8 mx-4'
+                 className='w-8 h-8 mx-4 cursor-pointer'
+                 onClick={() => dispatch(toggleMenu())}
             />
+
+            <a href='/'>
             <img alt='youtube-logo' 
                  src='https://tse4.mm.bing.net/th?id=OIP._IfEaUssjZQwZ1u92b1_GgHaEK&pid=Api&P=0&h=180'
                  className='w-32'
             />
+            </a>
         </div>
 
         <div className='flex items-center'>
