@@ -8,4 +8,7 @@
        - button list
             - button 
        - video container
-             - video card    
+             - video card
+                   - watch page
+
+# Debouncing

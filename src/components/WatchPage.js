@@ -11,8 +11,9 @@ const WatchPage = () => {
         dispatch(closeMenu());
     }, [])
   return (
-    <div>
-        <iframe width="1200" height="600" 
+    <div className='mt-20'>
+        <iframe width="1000" height="600" 
+                className='px-20 py-9'
                 src={`https://www.youtube.com/embed/${searchParams.get('v')}?si=Phq_t_C6n3V0YSU7`} 
                 title="YouTube video player" 
                 frameBorder="0" 

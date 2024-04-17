@@ -2,7 +2,7 @@ import React from 'react'
 
 const Sidebar = () => {
   return (
-    <div className='w-48 border-2 p-4'>
+    <div className='w-48 border-2 p-4 mt-20'>
         <div className='mb-3'>
             <ul>
                 <li>Home</li>
