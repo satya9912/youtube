@@ -5,8 +5,10 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const VideoContainer = () => {
+    useGetVideos();
     const showMenu = useSelector(store => store.app.showMenu);
-  const videos = useGetVideos();
+    const videos = useSelector(store => store.video.videos);
+    
   if(videos === null) return null;
 
   return (

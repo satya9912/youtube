@@ -1,4 +1,6 @@
-const GOOGLE_API_KEY = "AIzaSyCyCo1esjGuYF95d80bzO6Up0jblRWtMps";
+import { searchQuery } from "../components/Header";
+
+export const GOOGLE_API_KEY = "AIzaSyCyCo1esjGuYF95d80bzO6Up0jblRWtMps";
 
 export const LIVE_CHAT_COUNT = 20;
 

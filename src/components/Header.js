@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../utils/appSlice';
-import { YOUTUBE_SEARCH_API } from '../utils/constants';
+import { GOOGLE_API_KEY, YOUTUBE_SEARCH_API } from '../utils/constants';
 import { cachedResults } from '../utils/searchSlice';
 
 const Header = () => {
@@ -10,6 +10,7 @@ const Header = () => {
      const searchCache = useSelector(store => store.search);
      const [searchQuery, setSearchQuery] = useState("");
      const [suggestions, setSuggestions] = useState([]);
+     const [searchClicked, setSearchClicked] = useState(false);
      const [showSuggestions, setShowSuggestions] = useState(false);
 
      useEffect( () => {
@@ -32,6 +33,16 @@ const Header = () => {
           setSuggestions(json[1]);
           dispatch(cachedResults({[searchQuery]: json[1]}))
      }
+
+     useEffect( () => {
+       getSearchVideos();
+     }, [searchClicked]);
+     
+     const getSearchVideos = async () =>{
+          const data = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${GOOGLE_API_KEY}&part=snippet&q=${encodeURIComponent(searchQuery)}&type=video`);
+          const json = await data.json();
+          console.log(json.items);
+     }   
 
   return (
      <div className='fixed top-0 right-0 left-0 border-2 z-50 bg-white'>
@@ -60,7 +71,8 @@ const Header = () => {
                    onFocus={() => setShowSuggestions(true)}
                    onBlur={() => setShowSuggestions(false)}
             />
-            <button className='w-10 h-11 border-2 -ml-[2px] bg-gray'>
+            <button className='w-10 h-11 border-2 -ml-[2px] bg-gray'
+                    onClick={() => {setSearchClicked(!searchClicked)} }>
             <img alt='search-icon' 
                  src='https://cdn-icons-png.flaticon.com/128/54/54481.png'
                  className='w-8 p-1 text-white'
@@ -108,4 +120,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

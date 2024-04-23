@@ -40,7 +40,7 @@ const LiveChat = () => {
             ))}
         </div>
     </div>
-    <form className='mt-2 border-2 py-3 px-1'
+    <form className='mt-2 py-3 px-1'
         onSubmit={(e) => {
             e.preventDefault();
             dispatch(addMessage({
