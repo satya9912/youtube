@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom';
 const Body = () => {
     const showMenu = useSelector(store => store.app.showMenu);
   return (
-    <div className='flex'>
+    <div className='flex bg-black text-white'>
         {showMenu ? <Sidebar /> : null}
         <Outlet />
     </div>
