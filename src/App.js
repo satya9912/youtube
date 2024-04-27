@@ -13,7 +13,7 @@ function App() {
     }
   ];
 
-  const router = createBrowserRouter(routes)
+  const router = createBrowserRouter(routes, { basename: "/youtube" })
   return (
     <div className="App">
       <Header />
