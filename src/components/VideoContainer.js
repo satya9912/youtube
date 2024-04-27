@@ -12,7 +12,7 @@ const VideoContainer = () => {
   if(videos === null) return null;
 
   return (
-    <div className= {showMenu ? 'grid grid-cols-4 gap-3 p-4 ' : 'grid grid-cols-5 gap-4 p-4 ' }>
+    <div className= {showMenu ? 'grid grid-cols-4 gap-3 p-4' : 'grid grid-cols-5 gap-4 p-4 ' }>
         {videos?.map( (video) => (
             <Link to={`/watch?v=${video.id}`}  key={video.id}>
               <VideoCard info={video}/>

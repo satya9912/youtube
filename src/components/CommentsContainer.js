@@ -127,7 +127,7 @@ const commentsData = [
   const Comment = ({data}) => {
     const {name, text} = data;
     return(
-      <div className='flex items-center mb-3 border-2 px-4 py-2'>
+      <div className='flex items-center mb-3 px-4 py-2'>
         <div>
             <img alt='user-icon' 
                  src='https://cdn-icons-png.flaticon.com/128/149/149071.png'
@@ -147,7 +147,7 @@ const commentsData = [
       comments.map( (comment, index) => (
         <div>
           <Comment data={comment} key={index}/>
-           <div className='ml-5 border border-l-black pl-5'>
+           <div className='ml-5 pl-5'>
             {comment.replies.length > 0 && <CommentsList comments={comment.replies} /> }
            </div>
         </div>

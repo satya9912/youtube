@@ -25,7 +25,7 @@ const WatchPage = () => {
     
   return (
     <>
-    <div className='flex flex-col w-full'>
+    <div className='flex flex-col w-full bg=[#0F0F0F]'>
       <div className='flex w-full'>
           <div className='mt-16'>
               <iframe width="1100" height="600" 
@@ -43,7 +43,7 @@ const WatchPage = () => {
         <h3 className='font-semibold text-2xl'>{title}</h3>
       </div>
 
-      <div className='flex ml-5 p-2 items-center w-[1100px] border-2 bg-[#272727] text-white'>
+      <div className='flex ml-5 p-2 items-center w-[1100px] bg-[#0F0F0F] text-white'>
         <img src='https://tse1.mm.bing.net/th?id=OIP.gexU3lV6dn_QWA914ycDxAHaFj&pid=Api&P=0&h=180' 
              alt='channel-picture' 
             className='w-14 h-14 rounded-[50%] object-cover mx-2'/>
@@ -86,8 +86,10 @@ const WatchPage = () => {
 
       </div>
 
-      <div className='border-2 w-[1100px] ml-5 p-3 mt-4 bg-[#272727] text-white'>
-          <span className='font-semibold mr-2'>{viewCount} views</span>
+      <div className=' w-[1100px] ml-5 p-3 mt-4 bg-[#272727] text-white'>
+          {viewCount >= 1000000 ? <span className='font-semibold mr-2'>{Math.floor(viewCount/1000000)}M views</span> : 
+          <span className='font-semibold mr-2'>{Math.floor(viewCount/1000)}K views</span> 
+          }
           <span>uploaded on <span className='font-semibold'>{publishedAt.substring(0,10)}</span></span>
           <p className='mt-4'>{description}</p>
       </div>
