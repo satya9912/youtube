@@ -63,7 +63,6 @@ const Header = () => {
           setSearchQuery(suggestion);
           setShowSuggestions(false);
           setSearchClicked(true); 
-          console.log("function called")
       };
 
       const handleInputFocus = () => {
@@ -89,7 +88,7 @@ const Header = () => {
                  onClick={() => dispatch(toggleMenu())}
             />
 
-            <a href='/'>
+            <a href='/youtube'>
             <img alt='youtube-logo' 
                  src='https://tse4.mm.bing.net/th?id=OIP._IfEaUssjZQwZ1u92b1_GgHaEK&pid=Api&P=0&h=180'
                  className='w-32'
